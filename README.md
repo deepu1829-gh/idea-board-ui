@@ -22,13 +22,28 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 ## Running Unit Tests
 
-To run frontend unit tests and see code coverage:
+To run frontend unit tests:
 
 ```bash
 npm test
 ```
 
+To see code coverage:
+
+```bash
+npm test -- --coverage
+```
+
 Coverage results will be shown in the terminal and a detailed report will be available in the `coverage/` folder.
+
+### Troubleshooting
+- If you see warnings about React state updates not wrapped in act(...), these are safe to ignore for most UI tests unless you want to improve test strictness.
+- Make sure you have a `test` script in your `package.json`:
+  ```json
+  "scripts": {
+    "test": "jest"
+  }
+  ```
 
 ## Learn More
 
