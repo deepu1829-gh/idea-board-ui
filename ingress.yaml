@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: idea-board-ingress
+spec:
+  rules:
+    - host: idea-board.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: idea-board-frontend
+                port:
+                  number: 80
